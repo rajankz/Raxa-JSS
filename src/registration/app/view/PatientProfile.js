@@ -1,13 +1,18 @@
-Ext.define('RaxaEmr.view.Login', {
+Ext.define('RaxaEmr.Registration.view.PatientProfile', {
     extend: 'Ext.Carousel',
     config: {
         fullscreen: true,
+        defaults: {
+    		styleHtmlContent: true
+		},
+		scroll: 'vertical',
         items: [
         {
             xtype: 'fieldset',
-            title: 'PATIENT PROFILE INFORMATION',
+            title: 'Patient Profile Information',
             align: 'center',
             layout: 'vbox',
+            styleHtmlContent: true,
             items: [{
                 cls: 'halo',
             
@@ -15,16 +20,13 @@ Ext.define('RaxaEmr.view.Login', {
                     layout: 'hbox',
                     items: [
                     {
-                        styleHtmlContent: true
-                    },
-                    {
                         xtype:'textfield',
                         label: 'First Name',
                         cls: 'textFieldBckg',
                         labelAlign: 'top',
                         required: true,
                         clearIcon: true,
-                        labelWidth:'35%',
+                        width:'35%',
                         flex: 1,
                         labelCls: 'textFieldLabelBckg'
                     },
@@ -39,7 +41,7 @@ Ext.define('RaxaEmr.view.Login', {
                         labelAlign: 'top',
                         required: true,
                         clearIcon: true,
-                        labelWidth:'35%',
+                        width:'35%',
                         flex: 1,
                         labelCls: 'textFieldLabelBckg'
                     }
@@ -47,7 +49,7 @@ Ext.define('RaxaEmr.view.Login', {
                 },
                 {
                     xtype: 'spacer',
-                    height: '30px'
+                    height: '2em'
                 },
                 {
                     layout: 'hbox',
@@ -58,7 +60,7 @@ Ext.define('RaxaEmr.view.Login', {
                         labelAlign: 'top',
                         required: true,
                         clearIcon: true,
-                        labelWidth:'35%',
+                        width:'35%',
                         flex: 1,
                         cls: 'textFieldBckg',
                         labelCls: 'textFieldLabelBckg'
@@ -74,7 +76,7 @@ Ext.define('RaxaEmr.view.Login', {
                         labelAlign: 'top',
                         required: true,
                         clearIcon: true,
-                        labelWidth:'35%',
+                        width:'35%',
                         flex: 1,
                         labelCls: 'textFieldLabelBckg'
                     }
@@ -83,7 +85,7 @@ Ext.define('RaxaEmr.view.Login', {
                 },
                 {
                     xtype: 'spacer',
-                    height: '30px'
+                    height: '2em'
                 },
                 {
                     html: '<div class="labels">Sex</div>'
@@ -203,8 +205,80 @@ Ext.define('RaxaEmr.view.Login', {
                         ]
                     }
                     ]
+                },
+                {
+                	html: '<div class="labels">Education</div>'
+                },
+                {
+                	layout: 'hbox',
+                	items: [
+                	{
+                		xtype: 'radiofield',
+                		name: 'education',
+                		value: 'lessThanOrEqualTo5',
+                		label: '5th Pass or less',
+                		labelWidth: '200px',
+                	},
+                	{
+                		xtype: 'radiofield',
+                		name: 'education',
+                		value: '6To9',
+                		label: '6th - 9th Standard',
+                		labelWidth: '200px',
+                	},
+                	{
+                		xtype: 'radiofield',
+                		name: 'education',
+                		value: 'graduated',
+                		label: 'Graduate and above',
+                		labelWidth: '200px',
+                	},
+                	{
+                		xtype: 'radiofield',
+                		name: 'education',
+                		value: '10thAndAbove',
+                		label: '10th standard and above',
+                		labelWidth: '200px',
+                	},
+                	{
+                		xtype: 'radiofield',
+                		name: 'education',
+                		value: 'notEducated',
+                		label: 'Not Educated',
+                		labelWidth: '200px',
+                	}
+                	]
+                },
+                {
+                	xtype: 'spacer',
+                	height: '30px'
+                },
+                {
+                	xtype: 'selectfield',
+                	name: 'caste',
+                	label: 'Caste',
+                	placeHolder: 'Select Caste',
+                	displayField: 'desc',
+                	options:[
+                		{desc: 'First Caste', value: 'first'},
+                		{desc: 'Second Caste', value: 'second'},
+                		{desc: 'Third Caste', value: 'third'},
+                		{desc: 'Fourth Caste', value: 'fourth'},
+                		{desc: 'Fifth Caste', value: 'fifth'}
+                	]
                 }
                 ]
+            },
+            {
+            	xtype: 'spacer',
+            	height: '30px'
+            },
+            {
+            	xtype: 'button',
+            	text: 'CONTINUE',
+            	ui: 'confirm',
+            	width: '160px',
+            	id: 'continue'
             }
             ]
         },
