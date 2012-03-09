@@ -1,7 +1,7 @@
-Ext.setup({ 
-		onReady: function() {
-	Ext.regModel('User', { 
-	fields: [
+Ext.define('RaxaEmr.Registration.model.PatientData1', {
+	extend: 'Ext.data.Model',
+	id: 'PatientData1',
+	fields:[
 		{name: 'patientRegNum', type: 'string'},
 		{name: 'firstName', type: 'string'},
 		{name: 'lastName', type: 'string'},
@@ -13,6 +13,5 @@ Ext.setup({
 		{name: 'education', type: 'string'},
 		{name: 'caste', type: 'string'},
 		{name: 'occupation', type: 'string'}
-	]});
-	}
+	]
 });

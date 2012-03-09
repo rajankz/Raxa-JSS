@@ -9,25 +9,22 @@ Ext.application({
     tabletIcon: 'resources/img/icon_s.png',
     tabletStartupScreen: 'resources/img/icon.png',
     
-    controllers: ['Home'], // List of Controllers for dynamic loading
-    models: [], // List of Models for dynamic loading
-    views: ['Confirmation', 'PatientProfile', 'Vitals'], // List of Views for dynamic loading
-	views: [], // List of Views for dynamic loading
-    
-    store: [], // List of Stores for dynamic loading
+    controllers: ['Main'], // List of Controllers for dynamic loading
+    models: ['PatientData1'], // List of Models for dynamic loading
+
 
 	launch: function(){
 		console.log('Registration Launched');
-		//Ext.create('RaxaEmr.Registration.view.PatientProfile');
-		// we will place each pages in this carousel
-		var carousel = Ext.create('Ext.Carousel', {
-			fullscreen: true;
-			
+		Ext.create('RaxaEmr.Registration.view.PatientProfile');
+		/*var carousel=Ext.create('Ext.Carousel', {
+			fullscreen: true,
 			items: [
-				{xtype: 'home' },
-				{xtype: 'page2'}
+				{xtype: 'patientScreen1'}
 			]
 		});
+		*/
+		console.log('Registration Launch End');
+		
 	}
 });
 
